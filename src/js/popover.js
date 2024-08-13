@@ -1,5 +1,5 @@
 export class Popover {
-  constructor(){}
+  constructor() {}
 
   showPopover(title, message, element) {
     const popoverElement = document.createElement("div");
@@ -20,8 +20,10 @@ export class Popover {
 
     const { left, top } = element.getBoundingClientRect();
 
-    popoverElement.style.left = left - popoverElement.offsetWidth / 2 + element.offsetWidth / 2 + 'px';
-    popoverElement.style.bottom = top + element.offsetHeight + popoverElement.offsetHeight + 10 + 'px';
+    popoverElement.style.left =
+      left - popoverElement.offsetWidth / 2 + element.offsetWidth / 2 + "px";
+    popoverElement.style.bottom =
+      top + element.offsetHeight + popoverElement.offsetHeight + 10 + "px";
   }
 
   removePopover() {

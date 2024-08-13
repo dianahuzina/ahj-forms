@@ -41,6 +41,7 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
-    "puppeteer": "^23.0.2"
+    "puppeteer": "^23.0.2",
+    "yarn": "^1.22.22"
   }
 }

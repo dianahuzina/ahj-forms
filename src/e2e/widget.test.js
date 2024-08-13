@@ -1,8 +1,6 @@
-import puppeteer from 'puppeteer';
+import puppeteer from "puppeteer";
 
-jest.setTimeout(20000);
-
-describe('widget', () => {
+describe("widget", () => {
   let browser;
   let page;
 
@@ -14,23 +12,26 @@ describe('widget', () => {
     });
 
     page = await browser.newPage();
-  })
+  });
 
-  test('should show popover', async () => {
-    await page.goto('http://localhost:9000');
-    await page.waitForSelector('.btn');
-    await page.click('.btn');
-  })
+  test("should show popover", async () => {
+    
+    await page.goto("http://localhost:9000");
+    await page.waitForSelector(".btn");
+    await page.click(".btn");
+  }, 20000);
 
-  test('should remove popover', async () => {
-    await page.goto('http://localhost:9000');
-    await page.waitForSelector('.btn');
-    await page.click('.btn');
-    await page.waitForSelector('.popover');
-    await page.click('.btn');
-  })
+  test("should remove popover", async () => {
+    await page.goto("http://localhost:9000");
+    await page.waitForSelector(".btn");
+    await page.click(".btn");
+    await page.waitForSelector(".popover");
+    await page.click(".btn");
+  }, 20000);
 
   afterEach(async () => {
-    await browser.close();
+    if (browser) {
+      await browser.close();
+    }
   });
-})
+});
