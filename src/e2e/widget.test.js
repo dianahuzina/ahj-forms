@@ -6,17 +6,20 @@ describe("widget", () => {
 
   beforeEach(async () => {
     browser = await puppeteer.launch({
-      ignoreDefaultArgs: ['--disable-extensions'],
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
       headless: false,
       slowMo: 100,
       devtools: true,
+      env: {
+        DISPLAY: ":10.0"
+      }
     });
 
     page = await browser.newPage();
   });
 
   test("should show popover", async () => {
-    
+
     await page.goto("http://localhost:9000");
     await page.waitForSelector(".btn");
     await page.click(".btn");
