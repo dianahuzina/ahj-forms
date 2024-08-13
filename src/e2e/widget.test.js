@@ -10,9 +10,6 @@ describe("widget", () => {
       headless: false,
       slowMo: 100,
       devtools: true,
-      env: {
-        DISPLAY: ":10.0"
-      }
     });
 
     page = await browser.newPage();
