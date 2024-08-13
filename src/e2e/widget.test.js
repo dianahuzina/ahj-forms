@@ -6,6 +6,7 @@ describe("widget", () => {
 
   beforeEach(async () => {
     browser = await puppeteer.launch({
+      ignoreDefaultArgs: ['--disable-extensions'],
       headless: false,
       slowMo: 100,
       devtools: true,
