@@ -5,6 +5,7 @@ describe("widget", () => {
   let page;
 
   beforeEach(async () => {
+    jest.setTimeout(30000);
     browser = await puppeteer.launch({
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
       headless: false,
